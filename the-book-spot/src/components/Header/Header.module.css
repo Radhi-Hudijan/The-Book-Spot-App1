@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.nav {
+  background: #151515;
+  padding: 5px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.nav ul li {
+  padding: 16px 0;
+  cursor: pointer;
+}
+.link {
+  text-decoration: none;
+}
+.active {
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: inset 0 0 5px #e91e63, inset 0 0 10px #e91e63;
+  transition: all 0.2s linear;
+}
+
+.nav ul li.items {
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+.nav ul li.items:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: #e91e63;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+.nav ul li.items:hover:after {
+  opacity: 1;
+  bottom: 8px;
+}
+.nav .logo {
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 15px 0;
+
+  /* user-select: none; */
+}
+.nav ul li {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.nav ul li:hover {
+  color: #e91e63;
+}
+/* .nav ul li i {
+  font-size: 23px;
+}
+.nav ul li.btn {
+  display: none;
+}
+.nav ul li.btn.hide i:before {
+  content: "\f00d";
+} */
+@media all and (max-width: 900px) {
+  .nav {
+    padding: 5px 30px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav ul li.items {
+    width: 100%;
+    /* display: none; */
+  }
+
+  .nav .logo {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .nav ul li.items.show {
+    display: block;
+  }
+  /* .nav ul li.btn {
+    display: block;
+  } */
+  .nav ul li.items:hover {
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #e91e63, inset 0 0 10px #e91e63;
+  }
+  .nav ul li.items:hover:after {
+    opacity: 0;
+  }
+}
