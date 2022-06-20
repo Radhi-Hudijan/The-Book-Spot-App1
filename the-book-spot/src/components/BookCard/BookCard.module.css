@@ -24,12 +24,12 @@
   transform: scale(1.07);
 }
 
-/* .book p {
-  width: 90%;
+.book p {
+  width: 100%;
   margin-top: 12px;
   font-size: 17px;
   /* overflow: hidden; */
-/* } */
+}
 
 .title {
   margin-top: 12px;
@@ -42,7 +42,14 @@
 
 .description {
   width: 90%;
+  margin: 0 auto;
+  height: 14%;
+  overflow-y: clip;
 }
+/* .description span {
+  height: auto;
+  overflow-y: hidden;
+} */
 
 .book .author {
   font-size: 15px;

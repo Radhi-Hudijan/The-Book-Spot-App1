@@ -1,0 +1,58 @@
+.container {
+  width: 50vw;
+  /* height: 10vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+.title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.inputWrap {
+  width: 50%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+  border-radius: 0.8rem;
+  background: #151515;
+  box-sizing: border-box;
+}
+
+.inputWrap i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.productSearch {
+  font-size: 1.2rem;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 1rem;
+  background: #151515;
+  border: none;
+  outline: none;
+}
+
+.productSearch::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.searchIcon {
+  color: white;
+  font-size: 2rem;
+}
+.clearIcon {
+  color: white;
+}
+.clearIcon:hover,
+.searchIcon:hover {
+  cursor: pointer;
+}

@@ -6,7 +6,7 @@ import FavoriteBooksPage from "./pages/FavoriteBooks/FavoriteBooksPage";
 import BestSellersPage from "./pages/BestSellers/BestSellersPage";
 import BookDetailsPage from "./pages/BookDetails/BookDetailsPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import QuickLinksPage from "./pages/QuickLinksPage/QuickLinksPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
       <Routes>
         <Route path="/bestSellers" element={<BestSellersPage />} />
         <Route path="/favoriteBooks" element={<FavoriteBooksPage />} />
-        <Route path="/book/:id" element={<BookDetailsPage />} />
+        <Route path="/bookDetails/:id" element={<BookDetailsPage />} />
 
         <Route path={"/"} element={<Home />} />
-        <Route path={"/quickSearch/:searchWord"} element={<QuickLinksPage />} />
+        <Route path={"/search/:searchWord"} element={<SearchPage />} />
       </Routes>
       <Footer />
     </Router>

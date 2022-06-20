@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import useFetch from "../../Hooks/useFetch";
 import BookCard from "../../components/BookCard/BookCard";
-import styles from "./QuickLinksPage.module.css";
+import styles from "./SearchPage.module.css";
 import SearchIcons from "../../components/SearchIcons/SearchIcons";
 
-const QuickLinksPage = () => {
+const SearchPage = () => {
   const { searchWord } = useParams();
-
-  const { data: BooksResult, loading, error } = useFetch(searchWord);
+  let url = `https://www.googleapis.com/books/v1/volumes?q=${searchWord}&orderBy=newest`;
+  const { data: BooksResult, loading, error } = useFetch(url);
 
   if (loading) {
     return <Loading />;
@@ -24,12 +24,12 @@ const QuickLinksPage = () => {
     <>
       <SearchIcons />
       <div className={styles.list}>
-        {BooksResult.map((book) => (
-          <BookCard book={book} key={book.id} />
-        ))}
+        {BooksResult.map((book) => {
+          return <BookCard book={book} key={book.etag} />;
+        })}
       </div>
     </>
   );
 };
 
-export default QuickLinksPage;
+export default SearchPage;

@@ -1,0 +1,147 @@
+.container {
+  display: flex;
+  width: 80%;
+  margin: 2rem auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+}
+
+.imgCard {
+  width: 20%;
+  /* margin: auto 0; */
+  text-align: center;
+}
+.imgCard img {
+  display: block;
+  width: 100%;
+}
+
+.imgCard .bookTitle {
+  margin: 0 0 25px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  line-height: 25px;
+}
+.imgCard .bookDetails {
+  padding: 30px 30px 24px;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+
+.contentCard {
+  width: 70%;
+  margin: 0 0 0 3rem;
+}
+
+.title {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.bookPublishedDate {
+  text-align: left;
+  padding-left: 1rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-decoration: underline;
+}
+.description {
+  line-height: 2rem;
+  text-align: justify;
+  padding: 0 1rem;
+}
+
+.imgCard p {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-bottom: 4rem;
+
+  font-size: 1.5rem;
+  transition: 0.9s ease;
+}
+
+.imgCard p:hover {
+  background-color: #151515;
+  color: white;
+}
+
+.previous {
+  color: black;
+  border: 2px solid #151515;
+}
+
+.buttonRow {
+  display: flex;
+
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.btn {
+  margin: 0 2rem;
+  position: relative;
+  display: block;
+  color: #151515;
+  font-size: 14px;
+  font-family: "montserrat";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid #ff7675;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+  cursor: pointer;
+}
+.btn::before {
+  background: #ff7675;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.btn3::before {
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.btn3:hover::before {
+  height: 380%;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.iconsItem {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: rgba(66, 66, 66, 0.692);
+  margin: 1rem auto;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .imgCard {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .buttonRow {
+    flex-direction: column;
+  }
+}

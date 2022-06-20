@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (endPoint) => {
+const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ const useFetch = (endPoint) => {
     (async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes?q=${endPoint}&orderBy=newest&key=AIzaSyB0cCh0SmCTYBVDqY0wLPulH-SUOdaNRB0&maxResults=15`
+          `${url}&key=${process.env.REACT_APP_GOOGLE_API_KEY2}&maxResults=15`
         );
         const data = await response.json();
         setData(data.items);
@@ -20,7 +20,7 @@ const useFetch = (endPoint) => {
         setLoading(false);
       }
     })();
-  }, [endPoint]);
+  }, [url]);
 
   return { data, loading, error };
 };

@@ -1,37 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./PopularBooksList.module.css";
 import BookCard from "../BookCard/BookCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css/skyblue";
 import Loading from "../Loading/Loading";
+import useFetch from "../../Hooks/useFetch";
 
 const PopularBooksList = () => {
-  const [popularBooks, setPopularBooks] = useState([]);
-  const [loading, setLoading] = useState(false);
+  let url =
+    "https://www.googleapis.com/books/v1/volumes?q=business&orderBy=newest";
+  const { data: popularBooks, loading, error } = useFetch(url);
 
-  useEffect(() => {
-    setLoading(true);
-    (async () => {
-      try {
-        //check local storage before fetch
-        const check = localStorage.getItem("popularBooks");
-        if (check) {
-          setPopularBooks(JSON.parse(check));
-        } else {
-          const response = await fetch(
-            `https://www.googleapis.com/books/v1/volumes?q=flowers&orderBy=newest&key=AIzaSyB0cCh0SmCTYBVDqY0wLPulH-SUOdaNRB0&maxResults=15`
-          );
-          const data = await response.json();
-          localStorage.setItem("popularBooks", JSON.stringify(data.items));
-          setPopularBooks(data.items);
-        }
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, []);
+  if (error) {
+    return <div>There is an error as following:{error}</div>;
+  }
 
   return (
     <>
@@ -50,7 +32,7 @@ const PopularBooksList = () => {
         >
           {popularBooks.map((book) => {
             return (
-              <SplideSlide key={book.id}>
+              <SplideSlide key={book.etag}>
                 <BookCard book={book} />
               </SplideSlide>
             );

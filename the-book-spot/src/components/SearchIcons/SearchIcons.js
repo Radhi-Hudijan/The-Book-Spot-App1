@@ -12,25 +12,25 @@ const SearchIcons = () => {
       <p>Quick search links</p>
       <ul className={styles.iconList}>
         <li className={styles.color}>
-          <NavLink to={"/quickSearch/codepen"} className={className}>
+          <NavLink to={"/search/codepen"} className={className}>
             <FaCodepen />
           </NavLink>
           <div className={styles.title}>Codepen</div>
         </li>
         <li className={styles.color}>
-          <NavLink to={"/quickSearch/html"} className={className}>
+          <NavLink to={"/search/html"} className={className}>
             <FaHtml5 />
           </NavLink>
           <div className={styles.title}>HTML 5</div>
         </li>
         <li className={styles.color}>
-          <NavLink to={"/quickSearch/css"} className={className}>
+          <NavLink to={"/search/css"} className={className}>
             <FaCss3 />
           </NavLink>
           <div className={styles.title}>CSS 3</div>
         </li>
         <li className={styles.color}>
-          <NavLink to={"/quickSearch/javascript"} className={className}>
+          <NavLink to={"/search/javascript"} className={className}>
             <SiJavascript />
           </NavLink>
           <div className={styles.title}>Javascript</div>
