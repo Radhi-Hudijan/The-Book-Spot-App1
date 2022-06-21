@@ -23,11 +23,17 @@ const SearchPage = () => {
   return (
     <>
       <SearchIcons />
-      <div className={styles.list}>
+      <motion.div
+        className={styles.list}
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         {BooksResult.map((book) => {
           return <BookCard book={book} key={book.etag} />;
         })}
-      </div>
+      </motion.div>
     </>
   );
 };

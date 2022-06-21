@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import useFetch from "../../Hooks/useFetch";
+
 import Loading from "../../components/Loading/Loading";
 import { useParams } from "react-router-dom";
 import BookDetailsCard from "../../components/BookDetailsCard/BookDetailsCard";
+import { motion } from "framer-motion";
 
 const BookDetailsPage = () => {
   const { id } = useParams();
@@ -35,7 +36,12 @@ const BookDetailsPage = () => {
     return <div>There is an error as following:{error}</div>;
   }
   return (
-    <div>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <BookDetailsCard
         title={bookDetails?.volumeInfo?.title}
         author={bookDetails?.volumeInfo?.authors[0]}
@@ -51,7 +57,7 @@ const BookDetailsPage = () => {
         infoLink={bookDetails?.volumeInfo?.infoLink}
         printType={bookDetails?.volumeInfo?.printType}
       />
-    </div>
+    </motion.div>
   );
 };
 
