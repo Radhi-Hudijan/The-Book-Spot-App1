@@ -35,6 +35,7 @@ const BookDetailsPage = () => {
   if (error) {
     return <div>There is an error as following:{error}</div>;
   }
+
   return (
     <motion.div
       animate={{ opacity: 1 }}
@@ -43,6 +44,7 @@ const BookDetailsPage = () => {
       transition={{ duration: 0.5 }}
     >
       <BookDetailsCard
+        id={bookDetails?.id}
         title={bookDetails?.volumeInfo?.title}
         author={bookDetails?.volumeInfo?.authors[0]}
         image={bookDetails?.volumeInfo?.imageLinks?.thumbnail}
@@ -53,7 +55,7 @@ const BookDetailsPage = () => {
         publishedDate={bookDetails?.volumeInfo?.publishedDate}
         language={bookDetails?.volumeInfo?.language}
         pageCount={bookDetails?.volumeInfo?.pageCount}
-        previewLin={bookDetails?.volumeInfo?.previewLink}
+        previewLink={bookDetails?.volumeInfo?.previewLink}
         infoLink={bookDetails?.volumeInfo?.infoLink}
         printType={bookDetails?.volumeInfo?.printType}
       />

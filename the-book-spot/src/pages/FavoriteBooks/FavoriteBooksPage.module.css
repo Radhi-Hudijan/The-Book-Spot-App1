@@ -1,0 +1,13 @@
+.favTitle {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.favoriteList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 1rem auto;
+}

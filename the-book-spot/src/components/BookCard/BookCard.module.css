@@ -1,17 +1,21 @@
 .book {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   width: 230px;
-  height: 390px;
+  height: 450px;
   box-shadow: 0 0 20px #aaa;
   margin: 25px;
   padding: 10px 10px 0 10px;
   vertical-align: top;
   transition: height 1s;
 }
+a {
+  text-decoration: none;
+}
 
 .cover {
   border: 2px solid #151515;
-  height: 80%;
+  height: 70%;
   overflow: hidden;
 }
 
@@ -28,6 +32,7 @@
   width: 100%;
   margin-top: 12px;
   font-size: 17px;
+
   /* overflow: hidden; */
 }
 
@@ -43,8 +48,8 @@
 .description {
   width: 90%;
   margin: 0 auto;
-  height: 14%;
-  overflow-y: clip;
+  height: 15%;
+  overflow-y: hidden;
 }
 /* .description span {
   height: auto;
@@ -54,12 +59,69 @@
 .book .author {
   font-size: 15px;
 }
+
+.heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  margin: 0.7rem auto;
+
+  padding: 5px;
+  width: 90%;
+  border: 1px solid #151515;
+}
+.heart svg {
+  height: 100%;
+  padding: 0 10px;
+  color: #151515;
+  margin: auto;
+}
+.heart p {
+  margin: 1rem auto;
+}
+
+.heart:hover {
+  border: 1px solid #e91e63;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.solidHeart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  margin: 0.7rem auto;
+
+  padding: 5px;
+  width: 90%;
+  border: 1px solid #e91e63;
+  box-shadow: #e91e63 0px 1px 5px 0px;
+}
+.solidHeart svg {
+  height: 100%;
+  padding: 0 10px;
+  color: #e91e63;
+  margin: auto;
+}
+.solidHeart p {
+  margin: 1rem auto;
+}
+
+.heart:hover {
+  border: 1px solid #e91e63;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
 @media (max-width: 941px) {
   .container {
     max-width: 700px;
   }
   .book {
     margin: 49px;
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 730px) {
@@ -67,6 +129,7 @@
     display: block;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 2rem;
   }
   .cover {
   }

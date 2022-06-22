@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./BookDetailsCard.module.css";
 import { MdLanguage, MdContactPage, MdBook } from "react-icons/md";
 import { BiArrowBack } from "react-icons/bi";
+import { FavoriteIDContext } from "../../contexts/favoriteIDsContext";
+import { ReactComponent as RegularHeart } from "../../assets/heart-regular.svg";
+import { ReactComponent as SolidHeart } from "../../assets/heart-solid.svg";
+
 const BookDetailsCard = ({
+  id,
   title,
   author,
   description,
@@ -15,6 +20,9 @@ const BookDetailsCard = ({
   previewLink,
   infoLink,
 }) => {
+  console.log(previewLink);
+  const { favoriteIDs, getFavoritesID } = useContext(FavoriteIDContext);
+
   return (
     <>
       <div className={styles.container}>
@@ -29,10 +37,27 @@ const BookDetailsCard = ({
             <img src={image} alt={title} />
           </div>
           <div className={styles.bookDetails}>
-            <h3 className={styles.bookTitle}>Favorite Icone</h3>
+            {favoriteIDs.includes(id) ? (
+              <div
+                className={styles.solidHeart}
+                onClick={() => {
+                  getFavoritesID(id);
+                }}
+              >
+                <SolidHeart /> <p>Favourited</p>
+              </div>
+            ) : (
+              <div
+                className={styles.heart}
+                onClick={() => {
+                  getFavoritesID(id);
+                }}
+              >
+                <RegularHeart /> <p>Add To Favorite</p>
+              </div>
+            )}
           </div>
         </div>
-        {/* <!--   img section   --> */}
 
         <div className={styles.contentCard}>
           <h1 className={styles.title}>{title}</h1>
@@ -45,10 +70,17 @@ const BookDetailsCard = ({
 
           <p className={styles.description}>{description}</p>
           <div className={styles.buttonRow}>
-            <button className={`${styles.btn} ${styles.btn3}`}>
-              Review Book
+            <button
+              className={`${styles.btn}`}
+              onClick={() => window.open(`${previewLink}`, "_blank")}
+            >
+              Review In Google
             </button>
-            <button className={`${styles.btn} ${styles.btn3}`}>
+
+            <button
+              className={`${styles.btn}`}
+              onClick={() => window.open(`${infoLink}`, "_blank")}
+            >
               Read more
             </button>
           </div>

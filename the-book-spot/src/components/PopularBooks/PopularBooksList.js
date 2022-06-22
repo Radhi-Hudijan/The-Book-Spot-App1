@@ -16,7 +16,7 @@ const PopularBooksList = () => {
   }
 
   return (
-    <>
+    <div className={styles.section}>
       <h2 className={styles.title}>Popular Books For You</h2>
       {loading && <Loading />}
 
@@ -39,7 +39,7 @@ const PopularBooksList = () => {
           })}
         </Splide>
       </div>
-    </>
+    </div>
   );
 };
 
