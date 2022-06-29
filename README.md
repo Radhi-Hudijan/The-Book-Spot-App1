@@ -1,4 +1,4 @@
-# The-Book-Spot-App1 (React App Project)
+# The-Book-Spot-App (React App Project)
 
 The Book Spot app application created with **Create React App** framework, it allows you to Search the world's most comprehensive index of full-text books .
 
