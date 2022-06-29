@@ -181,10 +181,23 @@
 @media (max-width: 767px) {
   .container {
     flex-direction: column;
+    width: 100%;
   }
   .imgCard {
     margin: 0 auto;
     width: 50%;
+  }
+
+  .contentCard {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .contentCard .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    margin: 0 auto;
   }
   .buttonRow {
     flex-direction: column;
@@ -195,5 +208,24 @@
   .icons {
     width: 80%;
     gap: 2rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .imgCard {
+    margin: 0 auto;
+    width: 70%;
+  }
+  .contentCard .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .buttonRow {
+    width: 100%;
   }
 }
