@@ -56,3 +56,15 @@
 .searchIcon:hover {
   cursor: pointer;
 }
+
+@media all and (max-width: 900px) {
+  .container {
+    width: 100vw;
+  }
+
+  .productSearch {
+    font-size: 1rem;
+    width: 80%;
+    padding: 0 0 0 0.5rem;
+  }
+}

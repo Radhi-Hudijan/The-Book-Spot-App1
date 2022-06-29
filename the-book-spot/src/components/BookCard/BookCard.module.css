@@ -28,12 +28,11 @@ a {
   transform: scale(1.07);
 }
 
-.book p {
-  width: 100%;
-  margin-top: 12px;
-  font-size: 17px;
-
-  /* overflow: hidden; */
+.description {
+  width: 90%;
+  margin: 0 auto;
+  height: 15%;
+  overflow-y: hidden;
 }
 
 .title {
@@ -44,17 +43,6 @@ a {
   white-space: nowrap;
   overflow: hidden;
 }
-
-.description {
-  width: 90%;
-  margin: 0 auto;
-  height: 15%;
-  overflow-y: hidden;
-}
-/* .description span {
-  height: auto;
-  overflow-y: hidden;
-} */
 
 .book .author {
   font-size: 15px;

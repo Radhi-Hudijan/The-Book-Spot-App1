@@ -20,7 +20,6 @@ const BookDetailsCard = ({
   previewLink,
   infoLink,
 }) => {
-  console.log(previewLink);
   const { favoriteIDs, getFavoritesID } = useContext(FavoriteIDContext);
 
   return (
@@ -96,7 +95,7 @@ const BookDetailsCard = ({
             </div>
             <div>
               <MdBook className={styles.iconsItem} />
-              Type: {printType}
+              {printType}
             </div>
           </div>
         </div>
